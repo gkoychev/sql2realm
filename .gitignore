@@ -1,0 +1,21 @@
+# OSX
+.DS_Store
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.hprof
+
+#editors
+.vscode
+.idea
+
+**/realm-object-server
