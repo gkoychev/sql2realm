@@ -17,7 +17,7 @@ script:
   - yarn test
   - cd ./tests
   - docker-compose up -d
-  - ./wait_for.db.sh
+  - ./wait_for_db.sh
   - docker-compose ps
   - docker exec sql-mariadb ls
 
