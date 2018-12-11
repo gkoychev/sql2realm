@@ -8,10 +8,10 @@ services:
     container_name: sql-mariadb
     volumes:
       - data-volume:/var/lib/mysql
-      # - ./_data/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./mock_data.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: rechko
+      MYSQL_DATABASE: mock
       MYSQL_USER: test
       MYSQL_PASSWORD: test
     ports:
