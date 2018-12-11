@@ -10,7 +10,6 @@ cache: yarn
 install: yarn
 
 before_script:
-  # workaround as travis use ubuntu/trusty with mysql inside 
   - sudo /etc/init.d/mysql stop
 
   script: 
