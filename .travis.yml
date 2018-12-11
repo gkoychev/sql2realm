@@ -1,8 +1,23 @@
+sudo: required
 language: node_js
 node_js:
   - "8"
 
+services:
+  - docker
+
 cache: yarn
 install: yarn
 
-script: yarn test
+before_script:
+  # workaround as travis use ubuntu/trusty with mysql inside 
+  - sudo /etc/init.d/mysql stop
+
+  script: 
+  - yarn test
+  - cd ./tests
+  - docker-compose up
+  - docker-compose ps
+  - docker exec sql-mariadb ls
+
+

@@ -23,11 +23,13 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
     "jest": "^23.6.0",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "release-it": "^8.4.2"
   },
   "scripts": {
     "eslint": "eslint ./",
-    "test": "jest"
+    "test": "jest",
+    "release": "release-it"
   },
   "bin": {
     "sql2realm": "./cli.js"

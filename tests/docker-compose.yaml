@@ -1,0 +1,21 @@
+# This is for testing on travis only
+version: "3"
+
+services:
+  sql:
+    image: mariadb:latest
+    restart: always
+    container_name: sql-mariadb
+    volumes:
+      - data-volume:/var/lib/mysql
+      # - ./_data/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rechko
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3306:3306"
+
+volumes:
+  data-volume:
