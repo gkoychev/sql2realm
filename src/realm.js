@@ -3,9 +3,8 @@ const chalk = require("chalk");
 const Realm = require("realm");
 const { defaultRealmConfig } = require("./constants");
 
-const baseDir = resolve(__dirname, "../../");
 function getDbPath(dir) {
-  return resolve(baseDir, dir);
+  return resolve(dir);
 }
 
 module.exports = {
