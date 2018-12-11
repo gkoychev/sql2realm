@@ -3,7 +3,7 @@
 maxcounter=45
  
 MYSQL_USER=test
-$MYSQL_PASSWORD=test
+MYSQL_PASSWORD=test
 
 counter=1
 while ! mysql --protocol TCP -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "show databases;"; do
