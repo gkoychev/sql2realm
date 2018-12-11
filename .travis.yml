@@ -10,13 +10,14 @@ cache: yarn
 install: yarn
 
 before_script:
-  # workaround as travis use ubuntu/trusty with mysql inside 
+  # workaround as travis use ubuntu/trusty which has mysql but our docker need 3306 for mariadb
   - sudo /etc/init.d/mysql stop
 
 script: 
   - yarn test
   - cd ./tests
-  - docker-compose up
+  - docker-compose up -d
+  - ./wait_for.db.sh
   - docker-compose ps
   - docker exec sql-mariadb ls
 
