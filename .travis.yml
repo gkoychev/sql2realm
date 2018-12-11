@@ -1,3 +1,4 @@
+sudo: required
 language: node_js
 node_js:
   - "8"
@@ -11,6 +12,7 @@ install: yarn
 script: 
   - yarn test
   - cd ./tests
+  - ./setup_db.sh -d
   - docker-compose up
   - docker-compose ps
   - docker exec sql-mariadb ls
