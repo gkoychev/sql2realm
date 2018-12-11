@@ -1,4 +1,4 @@
-# Sql2Realm
+# sql2realm
 Command line tool to convert Sql database into Realm object database 
 
 [![Build Status](https://travis-ci.com/gkoychev/sql2realm.svg?branch=dev)](https://travis-ci.com/gkoychev/sql2realm)
