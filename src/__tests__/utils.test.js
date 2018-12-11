@@ -18,7 +18,7 @@ describe("Utils", () => {
     expect(isCamelCase({})).toEqual(false);
   });
 
-  test("getSchemas should work", () => {
+  test("getSchemas should handle circular schemas", () => {
     const tablesData = {
       table1: {
         schema: {

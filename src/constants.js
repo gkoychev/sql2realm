@@ -1,3 +1,7 @@
 module.exports = {
-  defaultRealmConfig: {}
+  defaultRealmConfig: {},
+  defaultSqlConfig: {
+    host: "localhost",
+    port: "3306"
+  }
 };
