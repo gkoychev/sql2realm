@@ -14,8 +14,9 @@ yarn-debug.log*
 yarn-error.log*
 *.hprof
 
-#editors
+# Editors
 .vscode
 .idea
 
+# Realm 
 **/realm-object-server
