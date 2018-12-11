@@ -9,11 +9,13 @@ services:
 cache: yarn
 install: yarn
 
-script: 
+before_script:
+  # workaround as travis use ubuntu/trusty with mysql inside 
+  - sudo /etc/init.d/mysql stop
+
+  script: 
   - yarn test
   - cd ./tests
-  - sudo netstat -alnp | grep 3306
-  - ./setup_db.sh -d
   - docker-compose up
   - docker-compose ps
   - docker exec sql-mariadb ls
