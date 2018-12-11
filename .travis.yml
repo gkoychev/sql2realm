@@ -20,3 +20,4 @@ script:
   - docker-compose up -d
   - ./wait_for_db.sh
   - docker exec sql-mariadb mysql -utest -ptest -e "show databases;"
+  - sql2realm ./config.json

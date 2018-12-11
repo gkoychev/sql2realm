@@ -1,0 +1,40 @@
+{
+  "mysql": {
+    "host": "127.0.0.1",
+    "user": "test",
+    "password": "test",
+    "database": "mock"
+  },
+
+  "realm": {
+    "database": "./db.realm"
+  },
+
+  "tables": {
+    "mock_data": {
+      "schema": {
+        "name": "Users",
+        "primaryKey": "id",
+        "properties": {
+          "id": "int",
+          "firstName": "string",
+          "lastName": "string",
+          "email": "string",
+          "gender": "string",
+          "ipAddress": "string"
+        }
+      },
+      "convert": {
+        "first_name": {
+          "rename": "firstName"
+        },
+        "last_name": {
+          "rename": "lastName"
+        },
+        "ip_address": {
+          "rename": "ipAddress"
+        }
+      }
+    }
+  }
+}
