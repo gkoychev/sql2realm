@@ -20,5 +20,6 @@ script:
   - wait 4
   - ./wait_for_db.sh
   - docker-compose ps
+  - docker exec sql-mariadb mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "show databases;"
 
 
