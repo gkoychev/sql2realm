@@ -16,9 +16,9 @@ before_script:
 script: 
   - yarn test
   - yarn link
+  - sql2realm
   - cd ./tests
   - docker-compose up -d
-  - wait 4
   - ./wait_for_db.sh
   - docker-compose ps
   - docker exec sql-mariadb mysql -utest -ptest -e "show databases;"
