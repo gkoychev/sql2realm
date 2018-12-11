@@ -1,6 +1,6 @@
 {
   "name": "sql2realm",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
