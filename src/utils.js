@@ -22,7 +22,6 @@ module.exports = {
 
     const findSchemaByName = schemaName => {
       const nameToFind = stripSchemaName(schemaName);
-      // console.log("Find1>>>>>>>", nameToFind);
       const tableName = Object.keys(allTablesConfig).find(
         name => allTablesConfig[name].schema.name === nameToFind
       );

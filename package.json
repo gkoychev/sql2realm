@@ -1,5 +1,5 @@
 {
-  "name": "mysql2realm",
+  "name": "sql2realm",
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
@@ -28,5 +28,8 @@
   "scripts": {
     "eslint": "eslint ./",
     "test": "jest"
+  },
+  "bin": {
+    "sql2realm": "./cli.js"
   }
 }

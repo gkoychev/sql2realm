@@ -1,17 +1,12 @@
 const mysql = require("promise-mysql");
 const chalk = require("chalk");
+const { defaultSqlConfig } = require("./constants");
 
 module.exports = {
   init: async config => {
     try {
       const conn = await mysql.createConnection(
-        Object.assign(
-          {
-            host: "localhost",
-            port: "3306"
-          },
-          config
-        )
+        Object.assign(defaultSqlConfig, config)
       );
       this.conn = conn;
       return conn;

@@ -1,8 +1,9 @@
 #!/usr/bin/env node
+require("pretty-error").start();
 const cliProgress = require("cli-progress");
 const figlet = require("figlet");
 const chalk = require("chalk");
-require("pretty-error").start();
+
 const logger = require("./src/logger");
 const { config, argv } = require("./src/loadconfig");
 const mysql = require("./src/mysql");
@@ -10,10 +11,10 @@ const Realm = require("./src/realm");
 const { getLastId, getSchemas } = require("./src/utils");
 const { convert } = require("./src/convert");
 
-const bar1 = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
+const progressBar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
 
 const intro = () => {
-  console.log(
+  logger.log(
     chalk.green(
       figlet.textSync("Mysql to Realm", {
         font: "Small",
@@ -43,17 +44,17 @@ const intro = () => {
 
       if (schema) {
         const schemas = getSchemas(config.tables, schema);
-        // logger.debug(schemas);
         const realm = await Realm.init(config.realm, schemas);
 
         const count = await mysql.getCount(tableName, filterRule);
 
         const pages = Math.ceil(count / argv.chunk);
-        bar1.start(pages - 1);
+        progressBar.start(pages - 1);
 
         let lastID = -1;
         for (let i = 0; i < pages; i += 1) {
-          bar1.update(i);
+          // process page by page
+          progressBar.update(i);
 
           const results = await mysql.getTableChunk(
             tableName,
@@ -63,17 +64,14 @@ const intro = () => {
           );
           lastID = getLastId(results);
 
-          // write by chunks
           realm.write(() => {
             results.forEach(element => {
               const newElement = convert(element, convertRules);
-              // console.log(newElement);
-              // process.exit();
               realm.create(schema.name, newElement);
             });
           });
         }
-        bar1.stop();
+        progressBar.stop();
         realm.close();
       }
     }
