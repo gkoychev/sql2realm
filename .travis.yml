@@ -12,6 +12,7 @@ install: yarn
 script: 
   - yarn test
   - cd ./tests
+  - sudo netstat -alnp | grep 3306
   - ./setup_db.sh -d
   - docker-compose up
   - docker-compose ps
