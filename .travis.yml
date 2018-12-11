@@ -15,11 +15,12 @@ before_script:
 
 script: 
   - yarn test
+  - yarn link
   - cd ./tests
   - docker-compose up -d
   - wait 4
   - ./wait_for_db.sh
   - docker-compose ps
-  - docker exec sql-mariadb mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "show databases;"
+  - docker exec sql-mariadb mysql -utest -ptest -e "show databases;"
 
 
