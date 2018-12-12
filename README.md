@@ -17,4 +17,18 @@ Or via [`npm`](https://www.npmjs.com/):
 npm install -g sql2realm
 ```
 
+## Usage
+
+```
+
+Usage: sql2realm <config file>
+
+Options:
+  --help       Show help                                               [boolean]
+  --version    Show version number                                     [boolean]
+  -s, --skip   skip some tables                            [array] [default: []]
+  -c, --chunk  chunk size                                       [default: 10000]
+
+```
+
 >...to be continued (WIP)
