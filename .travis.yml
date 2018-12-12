@@ -18,11 +18,10 @@ script:
   - yarn test
   - yarn link
   # run intergration tests in docker
-  - cd ./tests
+  - cd ./integration-test
   - source ./env.sh
   - docker-compose up -d      # start mysql database container 
   - ./wait_for_db.sh          # wait while db is up
-  # - docker exec sql-mariadb mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -e "show databases;"
   - sql2realm ./config.json   # convert to realm
   - test -e db.realm          # realm database should exists
   - ls -la
