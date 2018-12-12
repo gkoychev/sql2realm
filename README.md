@@ -31,6 +31,8 @@ Options:
 
 ```
 
+<p align="center"><img src="./img/demo.gif?raw=true"/></p>
+
 ## Example
 
 let say we have Mysql server up and running and have a database named `mock` with table `mock_data` (see [the dump](./integration-test/mock_data.sql))
