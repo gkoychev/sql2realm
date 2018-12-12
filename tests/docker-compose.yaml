@@ -10,7 +10,7 @@ services:
       # - data-volume:/var/lib/mysql
       - ./mock_data.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
-      # MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
