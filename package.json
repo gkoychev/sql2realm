@@ -1,6 +1,7 @@
 {
   "name": "sql2realm",
   "version": "0.0.3",
+  "keywords": ["sql", "mysql", "realm", "cli", "convert", "realmdb"],
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
