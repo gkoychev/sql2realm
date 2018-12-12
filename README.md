@@ -3,6 +3,8 @@ Command line tool to convert Sql database into Realm object database
 
 [![Build Status](https://travis-ci.com/gkoychev/sql2realm.svg?branch=dev)](https://travis-ci.com/gkoychev/sql2realm)
 
+> **the plans are to get support for `mssql` as for other sql adapters, so any contribution is very welcome**
+
 ## Getting Started
 
 Install using [`yarn`](https://yarnpkg.com/en/package/jest):
@@ -31,11 +33,12 @@ Options:
 
 ```
 
-<p align="center"><img src="./img/demo.gif?raw=true"/></p>
 
 ## Example
 
-let say we have Mysql server up and running and have a database named `mock` with table `mock_data` (see [the dump](./integration-test/mock_data.sql))
+<p align="center"><img src="https://github.com/gkoychev/sql2realm/blob/master/img/demo.gif?raw=true"/></p>
+
+let say we have Mysql server up and running and have a database named `mock` with a table named `mock_data` (see [the dump](./integration-test/mock_data.sql))
 
 and this is the config file `config.json` 
 ```
