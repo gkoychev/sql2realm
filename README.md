@@ -1,5 +1,5 @@
 # sql2realm
-Command line tool to convert Sql database into Realm object database 
+Command line tool to convert MySql database into Realm object database 
 
 [![Build Status](https://travis-ci.com/gkoychev/sql2realm.svg?branch=dev)](https://travis-ci.com/gkoychev/sql2realm)
 
@@ -88,7 +88,7 @@ for realm there is only one option:
 - `database` - path to database that will be created
 
 ### Tables
-this section contain tables from sql that will be converted to Realm
+this are the tables from sql to be converted into Realm
 ```
   "tables": {
     "mock_data": {

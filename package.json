@@ -5,10 +5,18 @@
     "sql",
     "mysql",
     "realm",
+    "realmdb",
+    "realm.io",
     "cli",
     "convert",
-    "realmdb"
+    "database"
   ],
+  "description": "Command line tool to convert MySql database into Realm object database",
+  "homepage": "https://github.com/gkoychev/sql2realm",
+  "author": {
+    "name": "Georgy Koychev",
+    "email": "kgm.pochta@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
